@@ -1,2 +1,1 @@
-# chisel-template-simple
-A simple template of Chisel project
+# A simple template for Chisel project
