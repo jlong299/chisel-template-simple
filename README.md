@@ -20,3 +20,11 @@ sbt "runMain example.GenSV"
 The generated SV file locates in folder **generated/**
 
 > See example.scala for the module defination and SV emitting method.
+
+## (Optional) If you prefer Mill
+**build.sc** is the mill build file.
+
+Run Mill command below to generate SV file
+```
+mill temp.runMain example.GenSV
+```
