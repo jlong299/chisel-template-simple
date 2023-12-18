@@ -28,3 +28,26 @@ Run Mill command below to generate SV file
 ```
 mill temp.runMain example.GenSV
 ```
+## For 3.5.5 and earlier version of Chisel
+No need to install Firtool because v3.5.5 and earlier ones use SFC (Scala FIRRTL Compiler).
+
+A reference build.sbt of v3.5.5 is as below.
+```scala
+scalaVersion := "2.12.13"
+val chiselVersion = "3.5.5"
+
+scalacOptions ++= Seq(
+  "-feature",
+  "-language:reflectiveCalls",
+  "-deprecation",
+  "-Xcheckinit",
+  "-P:chiselplugin:genBundleElements",
+)
+
+addCompilerPlugin("edu.berkeley.cs" % "chisel3-plugin" % chiselVersion cross CrossVersion.full)
+libraryDependencies += "edu.berkeley.cs" %% "chisel3" % chiselVersion
+```
+An example of Verilog emitting for v3.5.5 is:
+```scala
+emitVerilog(new Example(), Array("--target-dir", "generated"))
+```
