@@ -8,7 +8,7 @@ import scalalib._
 import mill.bsp._
 
 object temp extends SbtModule { m =>
-  override def millSourcePath = os.pwd
+  // override def millSourcePath = os.pwd
   override def scalaVersion = "2.13.10"
   override def scalacOptions = Seq(
     "-language:reflectiveCalls",
@@ -17,10 +17,10 @@ object temp extends SbtModule { m =>
     "-Xcheckinit",
   )
   override def ivyDeps = Agg(
-    ivy"org.chipsalliance::chisel:6.0.0-M3",
+    ivy"org.chipsalliance::chisel:6.6.0",
   )
   override def scalacPluginIvyDeps = Agg(
-    ivy"org.chipsalliance:::chisel-plugin:6.0.0-M3",
+    ivy"org.chipsalliance:::chisel-plugin:6.6.0",
   )
 }
 
