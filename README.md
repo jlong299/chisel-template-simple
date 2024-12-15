@@ -26,7 +26,9 @@ The generated SV file locates in folder **generated/**
 
 Run Mill command below to generate SV file
 ```
-mill temp.runMain example.GenSV
+./mill temp.run
+OR
+./mill temp.runMain example.GenSV
 ```
 ## For v3.5.x and earlier version of Chisel
 No need to install Firtool because v3.5.x and earlier ones use SFC (Scala FIRRTL Compiler).
